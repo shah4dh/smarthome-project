@@ -23,3 +23,11 @@ module "heating" {
   hash_key = 2
   hash_key_type = "N"
 }
+
+module "servers" {
+  source = "./modules/servers"
+
+  public_subnet_ids = module.vpc.public_subnet_ids
+  private_subnet_ids = module.vpc.private_subnet_ids
+  security_group_ids = module.security.security_group_ids
+}
