@@ -36,3 +36,13 @@ variable "egress_description" {
   type = string
   default = "Allow Egress inbound traffic through"
 }
+
+variable "ssh_security_name" {
+  type = string
+  default = "Allow_SSH"
+}
+
+variable "ssh_description" {
+  type = string
+  default = "Allows me to SSH only through my IP address"
+}
