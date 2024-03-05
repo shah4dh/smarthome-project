@@ -11,17 +11,17 @@ module "security" {
 module "lighting" {
   source = "./modules/dynamo"
 
-  dynamo_table_name = "Lighting"
-  hash_key = 1
-  hash_key_type = "N"
+  dynamo_table_name = var.light_name
+  hash_key = var.light_hash_key
+  hash_key_type = var.hash_key_type
 }
 
 module "heating" {
   source = "./modules/dynamo"
 
-  dynamo_table_name = "Heating"
-  hash_key = 2
-  hash_key_type = "N"
+  dynamo_table_name = var.heat_name
+  hash_key = var.heat_hash_key
+  hash_key_type = var.hash_key_type
 }
 
 module "servers" {
