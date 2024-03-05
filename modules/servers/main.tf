@@ -19,6 +19,7 @@ resource "aws_instance" "light" {
   instance_type = var.instance_type
   subnet_id     = var.public_subnet_ids[0]
   vpc_security_group_ids = var.security_group_ids 
+  associate_public_ip_address = true
 
   tags = {
     Name = var.light_name
@@ -30,6 +31,7 @@ resource "aws_instance" "heat" {
   instance_type = var.instance_type
   subnet_id     = var.public_subnet_ids[1]
   vpc_security_group_ids = var.security_group_ids 
+  associate_public_ip_address = true
 
   tags = {
     Name = var.heat_name
@@ -41,6 +43,7 @@ resource "aws_instance" "status" {
   instance_type = var.instance_type
   subnet_id     = var.public_subnet_ids[2]
   vpc_security_group_ids = var.security_group_ids 
+  associate_public_ip_address = true
 
   tags = {
     Name = var.status_name
