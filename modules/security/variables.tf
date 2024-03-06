@@ -4,7 +4,7 @@ variable "vpc_id" {
 
 variable "my_ip" {
   type = string
-  default = "154.56.242.95/32"
+  default =  "154.56.242.95/32"
 }
 
 variable "http_security_name" {
