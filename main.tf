@@ -30,4 +30,13 @@ module "servers" {
   public_subnet_ids = module.vpc.public_subnet_ids
   private_subnet_ids = module.vpc.private_subnet_ids
   security_group_ids = module.security.security_group_ids
+  vpc_id = module.vpc.vpc_id
+}
+
+module "load-balancers" {
+  source = "./modules/load-balancers"
+
+  public_subnet_ids = module.vpc.public_subnet_ids
+  private_subnet_ids = module.vpc.private_subnet_ids
+  vpc_id = module.vpc.vpc_id
 }

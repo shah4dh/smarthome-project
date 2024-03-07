@@ -23,6 +23,11 @@ variable "auth_name" {
   default = "Auth"
 }
 
+variable "region" {
+  type = string
+  default = "eu-west-2"
+}
+
 variable "public_subnet_ids" {
   type = list(string)
 }
@@ -33,4 +38,8 @@ variable "private_subnet_ids" {
 
 variable "security_group_ids" {
   type = list(string)
+}
+
+variable "vpc_id" {
+  type = string
 }

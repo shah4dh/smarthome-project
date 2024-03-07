@@ -37,3 +37,6 @@ variable "private_rt_name" {
   type = string
   default = "Private_RT"
 }
+
+
+
