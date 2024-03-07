@@ -46,3 +46,8 @@ variable "ssh_description" {
   type = string
   default = "Allows me to SSH only through my IP address"
 }
+
+variable "vpc_cidr" {
+  type = string
+  default = "10.0.0.0/16"
+}
