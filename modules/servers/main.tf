@@ -19,7 +19,7 @@ resource "aws_instance" "light" {
   instance_type = var.instance_type
   subnet_id     = var.public_subnet_ids[0]
   associate_public_ip_address = true
-  key_name = "firstkey"
+  key_name = var.key_name
   vpc_security_group_ids = var.security_group_ids 
 
   tags = {
@@ -32,7 +32,7 @@ resource "aws_instance" "heat" {
   instance_type = var.instance_type
   subnet_id     = var.public_subnet_ids[1]
   associate_public_ip_address = true
-  key_name = "firstkey"
+  key_name = var.key_name
   vpc_security_group_ids = var.security_group_ids 
 
   tags = {
@@ -45,7 +45,7 @@ resource "aws_instance" "status" {
   instance_type = var.instance_type
   subnet_id     = var.public_subnet_ids[2]
   associate_public_ip_address = true
-  key_name = "firstkey"
+  key_name = var.key_name
   vpc_security_group_ids = var.security_group_ids 
 
   tags = {
@@ -58,7 +58,7 @@ resource "aws_instance" "auth" {
   instance_type = var.instance_type
   subnet_id     = var.private_subnet_ids[0]
   associate_public_ip_address = false
-  key_name = "firstkey"
+  key_name = var.key_name
   vpc_security_group_ids = [var.security_group_ids[1] , var.security_group_ids[3]] // http + ssh
 
   tags = {

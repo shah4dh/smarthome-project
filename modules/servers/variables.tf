@@ -28,6 +28,11 @@ variable "region" {
   default = "eu-west-2"
 }
 
+variable "key_name" {
+  type = string
+  default = "firstkey"
+}
+
 variable "public_subnet_ids" {
   type = list(string)
 }
