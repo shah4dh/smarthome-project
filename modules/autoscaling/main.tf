@@ -59,7 +59,6 @@ resource "aws_autoscaling_group" "light_asg" {
   desired_capacity   = var.desired_capacity
   max_size           = var.max_size
   min_size           = var.min_size
-  target_group_arns = [ var.lighting_tg_arn ]
 
   launch_template {
     id      = aws_launch_template.light_lt.id
@@ -72,7 +71,6 @@ resource "aws_autoscaling_group" "heat_asg" {
   desired_capacity   = var.desired_capacity
   max_size           = var.max_size
   min_size           = var.min_size
-  target_group_arns = [ var.heating_tg_arn ]
 
   launch_template {
     id      = aws_launch_template.heat_lt.id
@@ -85,7 +83,6 @@ resource "aws_autoscaling_group" "status_asg" {
   desired_capacity   = var.desired_capacity
   max_size           = var.max_size
   min_size           = var.min_size
-  target_group_arns = [ var.status_tg_arn ]
 
   launch_template {
     id      = aws_launch_template.status_lt.id
@@ -98,7 +95,6 @@ resource "aws_autoscaling_group" "auth_asg" {
   desired_capacity   = var.desired_capacity
   max_size           = var.max_size
   min_size           = var.min_size
-  target_group_arns = [ var.auth_tg_arn ]
 
   launch_template {
     id      = aws_launch_template.auth_lt.id
