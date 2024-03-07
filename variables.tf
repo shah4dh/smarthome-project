@@ -11,9 +11,9 @@ variable "hash_key_type" {
 }
 
 variable "light_hash_key" {
-  type = number
+  type = string
 }
 
 variable "heat_hash_key" {
-  type = number
+  type = string
 }

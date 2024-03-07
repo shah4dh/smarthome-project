@@ -59,7 +59,7 @@ resource "aws_instance" "auth" {
   subnet_id     = var.private_subnet_ids[0]
   associate_public_ip_address = false
   key_name = "firstkey"
-  vpc_security_group_ids = var.security_group_ids 
+  vpc_security_group_ids = [var.security_group_ids[1] , var.security_group_ids[3]] // http + ssh
 
   tags = {
     Name = var.auth_name

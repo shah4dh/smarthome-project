@@ -5,7 +5,6 @@ variable "dynamo_table_name" {
 
 variable "hash_key" {
   type = string
-  default = 0
 }
 
 variable "hash_key_type" {
