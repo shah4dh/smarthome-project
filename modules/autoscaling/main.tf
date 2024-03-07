@@ -48,7 +48,7 @@ resource "aws_launch_template" "auth_lt" {
   network_interfaces {
     associate_public_ip_address = true
     subnet_id = var.private_subnet_ids[0]
-    security_groups = var.security_group_ids
+    security_groups = [var.security_group_ids[1], var.security_group_ids[3]] // http + ssh
   }
 }
 
