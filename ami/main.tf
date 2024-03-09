@@ -1,3 +1,5 @@
+# AMI's
+
 resource "aws_ami_from_instance" "light_ami" {
   name               = var.light_ami_name
   source_instance_id = var.light_id

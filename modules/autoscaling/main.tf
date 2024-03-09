@@ -55,10 +55,11 @@ resource "aws_launch_template" "auth_lt" {
 # AUTOSCALING GROUPS
 
 resource "aws_autoscaling_group" "light_asg" {
-  name               = var.light_asg_name
-  desired_capacity   = var.desired_capacity
-  max_size           = var.max_size
-  min_size           = var.min_size
+  name                = var.light_asg_name
+  desired_capacity    = var.desired_capacity
+  max_size            = var.max_size
+  min_size            = var.min_size
+  vpc_zone_identifier = [var.public_subnet_ids[0]]
 
   launch_template {
     id      = aws_launch_template.light_lt.id
@@ -67,10 +68,11 @@ resource "aws_autoscaling_group" "light_asg" {
 }
 
 resource "aws_autoscaling_group" "heat_asg" {
-  name               = var.heat_asg_name
-  desired_capacity   = var.desired_capacity
-  max_size           = var.max_size
-  min_size           = var.min_size
+  name                = var.heat_asg_name
+  desired_capacity    = var.desired_capacity
+  max_size            = var.max_size
+  min_size            = var.min_size
+  vpc_zone_identifier = [var.public_subnet_ids[1]]
 
   launch_template {
     id      = aws_launch_template.heat_lt.id
@@ -79,10 +81,11 @@ resource "aws_autoscaling_group" "heat_asg" {
 }
 
 resource "aws_autoscaling_group" "status_asg" {
-  name               = var.status_asg_name
-  desired_capacity   = var.desired_capacity
-  max_size           = var.max_size
-  min_size           = var.min_size
+  name                = var.status_asg_name
+  desired_capacity    = var.desired_capacity
+  max_size            = var.max_size
+  min_size            = var.min_size
+  vpc_zone_identifier = [var.public_subnet_ids[2]]
 
   launch_template {
     id      = aws_launch_template.status_lt.id
@@ -91,10 +94,11 @@ resource "aws_autoscaling_group" "status_asg" {
 }
 
 resource "aws_autoscaling_group" "auth_asg" {
-  name               = var.auth_asg_name
-  desired_capacity   = var.desired_capacity
-  max_size           = var.max_size
-  min_size           = var.min_size
+  name                = var.auth_asg_name
+  desired_capacity    = var.desired_capacity
+  max_size            = var.max_size
+  min_size            = var.min_size
+  vpc_zone_identifier = [var.private_subnet_ids[0]]
 
   launch_template {
     id      = aws_launch_template.auth_lt.id
